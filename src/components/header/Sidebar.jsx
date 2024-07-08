@@ -1,25 +1,27 @@
-// src/components/header/Sidebar.jsx
-import React, { useState } from 'react';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import React from 'react';
+import { AiOutlineClose } from 'react-icons/ai';
+import logo from '../../assets/forth_logo.svg';
 import NavLinks from './NavLinks';
 
-const Sidebar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
+const Sidebar = ({ isOpen, toggleSidebar }) => {
   return (
-    <div>
-      <button onClick={() => setIsOpen(!isOpen)}>
-        {isOpen ? <FaTimes /> : <FaBars />}
-      </button>
+    <>
       {isOpen && (
-        <div className="absolute top-0 left-0 w-full h-full bg-white p-4">
-          <NavLinks />
-          <a href="#" className="bg-black text-white py-2 px-4 rounded mt-4 block">
-            Contact Sales
-          </a>
+        <div className="fixed inset-0 z-50 bg-green-50 flex flex-col md:hidden">
+          <div className="flex items-center justify-between p-5">
+            <img src={logo} alt="Logo" className="h-8" />
+            <AiOutlineClose
+              size={30}
+              className="cursor-pointer"
+              onClick={toggleSidebar}
+            />
+          </div>
+          <nav className="flex-grow ml-4">
+            <NavLinks />
+          </nav>
         </div>
       )}
-    </div>
+    </>
   );
 };
 

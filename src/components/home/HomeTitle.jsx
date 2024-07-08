@@ -52,36 +52,47 @@ const HomeTitle = () => {
           </h1>
           <div className="md:grid md:grid-cols-2 gap-y-32 gap-x-32 justify-between relative">
             <div>
-              <div className="flex flex-col justify-between text-center md:text-start mb-0 md:mb-[50px] process-section" id="processContent0">
-                <div className="text-white py-3 my-4">
-                  <h1 className="text-white md:text-3xl text-base font-semibold md:my-6 my-3 font-custom">Source Talents Easily</h1>
-                  <p className="text-[#DFE2E4] font-custom">Talent acquisition demands efficiency. With Fort, you can <br /> create compelling job posts and identify talents perfect fit <br /> for your team.</p>
+              {[
+                {
+                  title: 'Source Talents Easily',
+                  text: 'Talent acquisition demands efficiency. With Fort, you can create compelling job posts and identify talents perfect fit for your team.',
+                  image: jobListing,
+                },
+                {
+                  title: 'Track and Manage Applicants with Ease',
+                  text: 'Keeping track of applicants and managing their information can be overwhelming. Our intuitive interface simplifies applicant tracking and management, enabling you to stay in control and make decisions with clarity.',
+                  image: simplify,
+                },
+                {
+                  title: 'Collaborate Effectively with Your Team',
+                  text: 'We know that collaboration among team members is crucial for successful hiring. Fort allows you to collaborate seamlessly with your hiring team, making collective decisions and improving the recruitment process.',
+                  image: collaborate,
+                },
+                {
+                  title: 'Communicate Seamlessly For a Smooth Hiring Process',
+                  text: 'Communication is key during the hiring process. Fort enables constant and transparent communication with applicants, keeping them engaged and informed every step of the way.',
+                  image: communicate,
+                },
+                {
+                  title: 'Make Informed Decisions with Data-Driven Insights',
+                  text: 'Data and analytics provide valuable insights into your recruitment process. Fort empowers you with data-driven decision-making by offering relevant reports and analytics, helping you refine your strategies for even better results.',
+                  image: dataDriven,
+                },
+              ].map((section, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col justify-between text-center md:text-start mb-0 md:mb-[50px] process-section"
+                  id={`processContent${index}`}
+                >
+                  <div className="text-white py-3 my-4">
+                    <h1 className="text-white md:text-3xl text-base font-semibold md:my-6 my-3 font-custom">
+                      {section.title}
+                    </h1>
+                    <p className="text-[#DFE2E4] font-custom">{section.text}</p>
+                    <img src={section.image} alt={section.title} className="md:hidden w-3/4 mx-auto mt-4" />
+                  </div>
                 </div>
-              </div>
-              <div className="flex flex-col justify-between text-center md:text-start mb-0 md:mb-[50px] process-section" id="processContent1">
-                <div className="text-white py-3 my-4">
-                  <h1 className="text-white md:text-3xl text-base font-semibold md:my-6 my-3 font-custom">Track and Manage Applicants with Ease</h1>
-                  <p className="text-[#DFE2E4] font-custom">Keeping track of applicants and managing their <br /> information can be overwhelming. Our intuitive interface <br /> simplifies applicant tracking and management, enabling <br /> you to stay in control and make decisions with clarity.</p>
-                </div>
-              </div>
-              <div className="flex flex-col justify-between text-center md:text-start mb-0 md:mb-[50px] process-section" id="processContent2">
-                <div className="text-white py-3 my-4">
-                  <h1 className="text-white md:text-3xl text-base font-semibold md:my-6 my-3 font-custom">Collaborate Effectively with Your Team</h1>
-                  <p className="text-[#DFE2E4] font-custom">We know that collaboration among team members is <br /> crucial for successful hiring. Fort allows you to collaborate <br /> seamlessly with your hiring team, making collective <br /> decisions and improving the recruitment process.</p>
-                </div>
-              </div>
-              <div className="flex flex-col justify-between text-center md:text-start mb-0 md:mb-[50px] process-section" id="processContent3">
-                <div className="text-white py-3 my-4">
-                  <h1 className="text-white md:text-3xl text-base font-semibold md:my-6 my-3 font-custom">Communicate Seamlessly For a Smooth Hiring Process</h1>
-                  <p className="text-[#DFE2E4] font-custom">Communication is key during the hiring process. Fort enables constant and <br /> transparent communication with applicants, <br /> keeping them engaged and informed every step of the way.</p>
-                </div>
-              </div>
-              <div className="flex flex-col justify-between text-center md:text-start mb-0 md:mb-[50px] process-section" id="processContent4">
-                <div className="text-white py-3 my-4">
-                  <h1 className="text-white md:text-3xl text-base font-semibold md:my-6 my-3 font-custom">Make Informed Decisions with Data-Driven Insights</h1>
-                  <p className="text-[#DFE2E4] font-custom">Data and analytics provide valuable insights into your <br /> recruitment process. Fort empowers you with data-driven <br /> decision-making by offering relevant reports and analytics, <br /> helping you refine your strategies for even better results.</p>
-                </div>
-              </div>
+              ))}
             </div>
             <div className="hidden md:block sticky top-[6rem] md:h-[500px] overflow-x-clip">
               {images.map((img, index) => (

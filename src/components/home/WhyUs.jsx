@@ -5,7 +5,7 @@ import whyUs3 from '../../assets/why-us3.svg';
 
 const WhyUs = () => {
   return (
-    <section className="md:py-16 py-4 max-w-[80rem] flex flex-col md:flex-row m-auto px-6">
+    <section className="bg-green-50 md:py-16 py-4  flex flex-col md:flex-row m-auto px-6 md:px-16">
       <div className="grid grid-cols-2 gap-4 order-2 md:order-1">
         <img src={whyUs1} alt="Why Us 1" className="col-span-2" />
         <img src={whyUs2} alt="Why Us 2" />

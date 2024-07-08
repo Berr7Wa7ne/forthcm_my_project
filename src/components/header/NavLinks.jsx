@@ -13,24 +13,24 @@ const NavLinks = () => {
   const externalLinkClass = 'text-gray-700 hover:text-green-500 hover:underline hover:underline-offset-4 hover:decoration-2 hover:decoration-green-500 transition-colors duration-300';
 
   return (
-    <ul className="flex space-x-8 items-center text-lg font-custom">
+    <ul className="space-y-8 md:flex md:space-y-0 md:items-center md:gap-4 text-xl">
       <li>
-        <Link to="/" className={`transition-colors duration-300 ${getLinkClass('/')}`}>
+        <Link to="/" className={`hover:text-green-500 block transition-colors duration-300 ${getLinkClass('/')}`}>
           Home
         </Link>
       </li>
       <li>
-        <Link to="/about" className={`transition-colors duration-300 ${getLinkClass('/about')}`}>
+        <Link to="/about" className={`hover:text-green-500 block transition-colors duration-300 ${getLinkClass('/about')}`}>
           About Us
         </Link>
       </li>
       <li>
-        <Link to="/contact" className={`transition-colors duration-300 ${getLinkClass('/contact')}`}>
+        <Link to="/contact" className={`hover:text-green-500 block transition-colors duration-300 ${getLinkClass('/contact')}`}>
           Contact Us
         </Link>
       </li>
       <li>
-        <a href="https://jobs.example.com" className={`flex items-center gap-1 ${externalLinkClass}`}>
+        <a href="https://jobs.example.com" className={`block flex items-center gap-1 ${externalLinkClass}`}>
           Jobs
           <svg
             xmlns="http://www.w3.org/2000/svg"
